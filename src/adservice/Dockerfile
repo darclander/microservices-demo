@@ -18,12 +18,12 @@ WORKDIR /app
 
 COPY ["build.gradle", "gradlew", "./"]
 COPY gradle gradle
-RUN chmod +x gradlew
-RUN ./gradlew downloadRepos
+RUN chmod +x gradlew.bat
+CMD gradlew.bat downloadRepos && gradlew.bat installDist
 
-COPY . .
-RUN chmod +x gradlew
-RUN ./gradlew installDist
+#COPY . .
+#RUN chmod +x gradlew.bat
+#RUN gradlew.bat installDist
 
 FROM openjdk:8-slim
 

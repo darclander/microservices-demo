@@ -28,8 +28,9 @@ FROM base
 COPY --from=builder /install /usr/local
 
 COPY . .
-RUN chmod +x ./loadgen.sh
 RUN apt-get -qq update \
     && apt-get install -y --no-install-recommends \
         curl
-ENTRYPOINT ./loadgen.sh
+#CMD loadgen.sh
+USER root
+ENTRYPOINT [ "bash", "loadgen.sh" ]

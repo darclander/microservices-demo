@@ -22,13 +22,13 @@ build:
   # https://skaffold.dev/docs/concepts/#image-repository-handling
  
   ## Python
-  # - image: emailservice
-  #   context: src/emailservice
+  - image: emailservice
+    context: src/emailservice
   - image: productcatalogservice
     context: src/productcatalogservice
   ## Python 
-  # - image: recommendationservice
-  #   context: src/recommendationservice
+  #- image: recommendationservice
+  #  context: src/recommendationservice
   - image: shippingservice
     context: src/shippingservice
   - image: checkoutservice
@@ -38,16 +38,16 @@ build:
   - image: currencyservice
     context: src/currencyservice
   ## C-SHARP
-  # - image: cartservice
-  #   context: src/cartservice
+  - image: cartservice
+    context: src/cartservice
   - image: frontend
     context: src/frontend
   ## Python
-  # - image: loadgenerator
-  #   context: src/loadgenerator
+  #- image: loadgenerator
+  #  context: src/loadgenerator
   ## Java
-  # - image: adservice
-  #   context: src/adservice
+  #- image: adservice
+  #  context: src/adservice
   tagPolicy:
     gitCommit: {}
   local:
