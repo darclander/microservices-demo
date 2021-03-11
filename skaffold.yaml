@@ -43,14 +43,15 @@ build:
   - image: frontend
     context: src/frontend
   ## Python
-  - image: loadgenerator
-    context: src/loadgenerator
-  ## Java
+  # - image: loadgenerator
+  #   context: src/loadgenerator
+  # Java
   # - image: adservice
   #   context: src/adservice
   tagPolicy:
     gitCommit: {}
   local:
+    push: false # For skaffold to skip pushing images
     useBuildkit: false
 deploy:
   kubectl:
